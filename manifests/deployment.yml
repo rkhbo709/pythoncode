@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "memsql-3ae6"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "memsql-3ae6"
+  template:
+    metadata:
+      labels:
+        app: "memsql-3ae6"
+    spec:
+      containers:
+        - name: "memsql-3ae6"
+          image: "azpass.azurecr.io/memsql"
+          ports:
+          - containerPort: 80
