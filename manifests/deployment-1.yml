@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "memsql-7bdc"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "memsql-7bdc"
+  template:
+    metadata:
+      labels:
+        app: "memsql-7bdc"
+    spec:
+      containers:
+        - name: "memsql-7bdc"
+          image: "python3.azurecr.io/memsql"
+          ports:
+          - containerPort: 80
